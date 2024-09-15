@@ -1,0 +1,4 @@
+Ex4.c:14:6:display7SEG	16	static
+Ex4.c:107:6:update7SEG	16	static
+Ex4.c:150:6:ex4_init	8	static
+Ex4.c:154:6:ex4_run	8	static
