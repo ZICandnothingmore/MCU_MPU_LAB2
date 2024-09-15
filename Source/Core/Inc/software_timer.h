@@ -13,6 +13,6 @@
 extern int timer1_flag;
 
 void setTimer1(int duration);
-void time_run();
+void timer_run();
 
 #endif /* INC_SOFTWARE_TIMER_H_ */
