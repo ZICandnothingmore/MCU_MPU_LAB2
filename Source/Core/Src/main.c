@@ -94,11 +94,13 @@ int main(void)
   HAL_GPIO_WritePin(GPIOB, a_Pin|b_Pin|c_Pin|d_Pin|e_Pin|f_Pin
                           |g_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(GPIOA, EN0_Pin|EN1_Pin|EN2_Pin|EN3_Pin, 1);
+  ex2_init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   setTimer1(50);
+  setTimer2(100);
   while (1)
   {
     /* USER CODE END WHILE */
@@ -110,6 +112,11 @@ int main(void)
 		HAL_GPIO_TogglePin(RED_LED_GPIO_Port, RED_LED_Pin);
 		ex2_run();
 	}
+//	if (timer2_flag == 1){
+//		setTimer1(100);
+//		//TODO
+//		HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
+//	}
   }
   /* USER CODE END 3 */
 }
@@ -248,7 +255,6 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-int counter = 100;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 //	if (counter > 0){
 //		counter--;

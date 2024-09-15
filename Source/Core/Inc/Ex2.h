@@ -12,5 +12,6 @@
 
 void ex2_init();
 void ex2_run();
+void dot_run();
 
 #endif /* INC_EX2_H_ */

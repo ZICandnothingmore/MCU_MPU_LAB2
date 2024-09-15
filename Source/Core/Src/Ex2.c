@@ -7,7 +7,7 @@
 
 #include "Ex2.h"
 
-int status = 1;
+int status;
 
 void display7SEG(int num){
 	if (num == 0){
@@ -103,7 +103,12 @@ void display7SEG(int num){
 }
 
 void ex2_init(){
-
+	HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, 0);
+	HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 1);
+	HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 1);
+	HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 1);
+	display7SEG(1);
+	status = 2;
 }
 
 void ex2_run(){
@@ -113,6 +118,7 @@ void ex2_run(){
 			HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 1);
 			HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 1);
 			HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 1);
+			HAL_GPIO_WritePin(DOT_GPIO_Port, DOT_Pin, 0);
 			display7SEG(1);
 			status = 2;
 			break;
@@ -131,6 +137,7 @@ void ex2_run(){
 			HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 1);
 			HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 0);
 			HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 1);
+			HAL_GPIO_WritePin(DOT_GPIO_Port, DOT_Pin, 1);
 			display7SEG(3);
 			status = 0;
 			break;
