@@ -1,0 +1,4 @@
+Ex3.c:14:6:display7SEG	16	static
+Ex3.c:107:6:update7SEG	16	static
+Ex3.c:150:6:ex3_init	8	static
+Ex3.c:154:6:ex3_run	8	static
