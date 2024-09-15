@@ -113,7 +113,7 @@ int main(void)
 		ex2_run();
 	}
 	if (timer2_flag == 1){
-		setTimer1(100);
+		setTimer2(100);
 		//TODO
 		HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
 	}

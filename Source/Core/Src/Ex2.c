@@ -118,7 +118,7 @@ void ex2_run(){
 			HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 1);
 			HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 1);
 			HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 1);
-			HAL_GPIO_WritePin(DOT_GPIO_Port, DOT_Pin, 0);
+			//HAL_GPIO_WritePin(DOT_GPIO_Port, DOT_Pin, 0);
 			display7SEG(1);
 			status = 2;
 			break;
@@ -137,7 +137,7 @@ void ex2_run(){
 			HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 1);
 			HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 0);
 			HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 1);
-			HAL_GPIO_WritePin(DOT_GPIO_Port, DOT_Pin, 1);
+			//HAL_GPIO_WritePin(DOT_GPIO_Port, DOT_Pin, 1);
 			display7SEG(3);
 			status = 0;
 			break;
