@@ -112,11 +112,11 @@ int main(void)
 		HAL_GPIO_TogglePin(RED_LED_GPIO_Port, RED_LED_Pin);
 		ex2_run();
 	}
-//	if (timer2_flag == 1){
-//		setTimer1(100);
-//		//TODO
-//		HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
-//	}
+	if (timer2_flag == 1){
+		setTimer1(100);
+		//TODO
+		HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
+	}
   }
   /* USER CODE END 3 */
 }
