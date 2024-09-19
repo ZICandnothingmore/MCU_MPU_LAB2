@@ -1,6 +1,6 @@
 Ex5.c:16:6:display7SEG	16	static
 Ex5.c:109:6:update7SEG	16	static
-Ex5.c:153:6:updateClockBuffer	4	static
-Ex5.c:160:6:clock_run	8	static
-Ex5.c:176:6:ex5_init	8	static
-Ex5.c:185:6:ex5_run	8	static
+Ex5.c:149:6:updateClockBuffer	4	static
+Ex5.c:156:6:clock_run	8	static
+Ex5.c:172:6:ex5_init	8	static
+Ex5.c:183:6:ex5_run	8	static

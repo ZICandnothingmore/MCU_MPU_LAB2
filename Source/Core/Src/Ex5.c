@@ -5,12 +5,12 @@
  *      Author: ACER
  */
 
-#include <Ex5.h>
+#include "Ex5.h"
 
 int hour, minute, second;
 //int hour_digit1, hour_digit2, min_digit1, min_digit2;
 const int MAX_LED = 4;
-int index_led = -1;
+int index_led = 0;
 int led_buffer[] = {1,2,3,4};
 
 void display7SEG(int num){
@@ -115,7 +115,6 @@ void update7SEG(int index){
 			HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 1);
 			HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 1);
 			display7SEG(led_buffer[0]);
-			index = 1;
 			break;
 		case 1:
 			//TODO
@@ -124,7 +123,6 @@ void update7SEG(int index){
 			HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 1);
 			HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 1);
 			display7SEG(led_buffer[1]);
-			index = 2;
 			break;
 		case 2:
 			//TODO
@@ -133,7 +131,6 @@ void update7SEG(int index){
 			HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 0);
 			HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 1);
 			display7SEG(led_buffer[2]);
-			index = 3;
 			break;
 		case 3:
 			//TODO
@@ -142,7 +139,6 @@ void update7SEG(int index){
 			HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 1);
 			HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 0);
 			display7SEG(led_buffer[3]);
-			index = 0;
 			break;
 		default:
 			break;
@@ -177,11 +173,13 @@ void ex5_init(){
 	hour = 23;
 	minute = 58;
 	second = 57;
-	HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, 1);
+	HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, 0);
 	HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 1);
 	HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 1);
 	HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 1);
+	display7SEG(hour/10);
 }
+
 void ex5_run(){
 	clock_run();
 	if (index_led > 3) index_led = 0;
