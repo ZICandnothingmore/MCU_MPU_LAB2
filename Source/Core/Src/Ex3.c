@@ -113,7 +113,6 @@ void update7SEG(int index){
 			HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 1);
 			HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 1);
 			display7SEG(led_buffer[0]);
-			index = 1;
 			break;
 		case 1:
 			//TODO
@@ -122,7 +121,6 @@ void update7SEG(int index){
 			HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 1);
 			HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 1);
 			display7SEG(led_buffer[1]);
-			index = 2;
 			break;
 		case 2:
 			//TODO
@@ -131,7 +129,6 @@ void update7SEG(int index){
 			HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 0);
 			HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 1);
 			display7SEG(led_buffer[2]);
-			index = 3;
 			break;
 		case 3:
 			//TODO
@@ -140,7 +137,6 @@ void update7SEG(int index){
 			HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 1);
 			HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 0);
 			display7SEG(led_buffer[3]);
-			index = 0;
 			break;
 		default:
 			break;
@@ -148,7 +144,7 @@ void update7SEG(int index){
 }
 
 void ex3_init(){
-	update7SEG(index_led);
+	update7SEG(0);
 }
 
 void ex3_run(){
