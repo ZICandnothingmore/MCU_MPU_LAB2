@@ -7,31 +7,31 @@
 
 #include "software_timer.h"
 
-int timer1_flag = 0;
-int timer1_counter = 0;
-int timer2_flag = 0;
-int timer2_counter = 0;
+#define MAX_COUNTER  10
 
-void setTimer1(int duration){
-	timer1_counter = duration;
-	timer1_flag = 0;
-}
-void setTimer2(int duration){
-	timer2_counter = duration;
-	timer2_flag = 0;
+int timer_counter[MAX_COUNTER];
+int timer_flag[MAX_COUNTER];
+
+void setTimer(int index, int duration){
+	timer_counter[index] = duration;
+	timer_flag[index] = 0;
 }
 
-void timer_run(){
-	if (timer1_counter > 0){
-		timer1_counter--;
-		if (timer1_counter <=0 ){
-			timer1_flag = 1;
+void timer_run(void){
+	for (int i = 0; i < MAX_COUNTER; i++){
+		if (timer_counter[i] > 0){
+			timer_counter[i]--;
+			if (timer_counter[i] <=0 ){
+				timer_flag[i] = 1;
+			}
 		}
 	}
-	if (timer2_counter > 0){
-		timer2_counter--;
-		if (timer2_counter <=0 ){
-			timer2_flag = 1;
-		}
+}
+
+int isTimerExpired(int index){
+	if (timer_flag[index] == 1){
+		timer_flag[index] = 0;
+		return 1;
 	}
+	return 0;
 }

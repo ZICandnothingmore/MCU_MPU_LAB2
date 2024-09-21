@@ -99,20 +99,20 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  setTimer1(1000/10/4);
-  setTimer2(100);
+  setTimer(0, 1000/10/4);
+  setTimer(1, 100);
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	if (timer1_flag == 1){
-		setTimer1(25);
+	if (isTimerExpired(0) == 1){
+		setTimer(0, 25);
 		//TODO
 		ex7_run();
 	}
-	if (timer2_flag == 1){
-		setTimer2(100);
+	if (isTimerExpired(1) == 1){
+		setTimer(1, 100);
 		//TODO
 		HAL_GPIO_TogglePin(RED_LED_GPIO_Port, RED_LED_Pin);
 		HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
