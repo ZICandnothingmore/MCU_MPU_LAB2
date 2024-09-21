@@ -99,24 +99,19 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  setTimer(0, 1000/10/4);
   setTimer(1, 100);
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	if (isTimerExpired(0) == 1){
-		setTimer(0, 25);
-		//TODO
-		ex7_run();
-	}
 	if (isTimerExpired(1) == 1){
 		setTimer(1, 100);
 		//TODO
 		HAL_GPIO_TogglePin(RED_LED_GPIO_Port, RED_LED_Pin);
 		HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
 	}
+	HAL_Delay(1000);
   }
   /* USER CODE END 3 */
 }
@@ -255,17 +250,15 @@ static void MX_GPIO_Init(void)
 }
 
 ///* USER CODE BEGIN 4 */
-//int counter_1 = 100;
-//int counter_2 = 1000/10/4;
+int counter_1 = 25;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-//	if (counter_1 > 0){
-//		counter_1--;
-//		if (counter_1 <= 0){
-//			counter_1 = 100;
-//			HAL_GPIO_TogglePin(RED_LED_GPIO_Port, RED_LED_Pin);
-//			HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
-//		}
-//	}
+	if (counter_1 > 0){
+		counter_1--;
+		if (counter_1 <= 0){
+			counter_1 = 25;
+			ex7_run();
+		}
+	}
 //	if (counter_2 > 0){
 //		counter_2--;
 //		if (counter_2 <= 0){
