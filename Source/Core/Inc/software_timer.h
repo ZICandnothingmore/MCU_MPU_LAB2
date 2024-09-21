@@ -10,9 +10,8 @@
 
 #include "main.h"
 
-extern int timer1_flag;
-
-void setTimer1(int duration);
+void setTimer(int index, int duration);
 void timer_run();
+int isTimerExpired(int index);
 
 #endif /* INC_SOFTWARE_TIMER_H_ */

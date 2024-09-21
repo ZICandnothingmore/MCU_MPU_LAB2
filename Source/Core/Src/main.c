@@ -19,10 +19,11 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "software_timer.h"
+#include "Ex8.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -93,21 +94,29 @@ int main(void)
   HAL_GPIO_WritePin(GPIOB, a_Pin|b_Pin|c_Pin|d_Pin|e_Pin|f_Pin
                           |g_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(GPIOA, EN0_Pin|EN1_Pin|EN2_Pin|EN3_Pin, 1);
+  ex8_init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  setTimer1(100);
+  setTimer(0, 100);
+  setTimer(1, 25);
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	if (timer1_flag == 1){
-		setTimer1(100);
+	if (isTimerExpired(0) == 1){
+		setTimer(0, 100);
 		//TODO
 		HAL_GPIO_TogglePin(RED_LED_GPIO_Port, RED_LED_Pin);
+		HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
 	}
+	if (isTimerExpired(1) == 1){
+		setTimer(1, 25);
+		//TODO
+		ex8_run();
+		}
   }
   /* USER CODE END 3 */
 }
