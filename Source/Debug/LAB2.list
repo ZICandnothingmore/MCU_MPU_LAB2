@@ -37,11 +37,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  000166e6  00000000  00000000  0002b428  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000a0a5  00000000  00000000  00041b0e  2**0
+ 17 .debug_line   0000a0a4  00000000  00000000  00041b0e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00082301  00000000  00000000  0004bbb3  2**0
+ 18 .debug_str    00082301  00000000  00000000  0004bbb2  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  000cdeb4  2**0
+ 19 .comment      00000053  00000000  00000000  000cdeb3  2**0
                   CONTENTS, READONLY
  20 .debug_frame  000026d4  00000000  00000000  000cdf08  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -77,10 +77,10 @@ Disassembly of section .text:
  8000148:	08001e04 	.word	0x08001e04
 
 0800014c <displayLEDMatrix>:
-//									|ROW4_Pin|ROW5_Pin|ROW6_Pin|ROW7_Pin, GPIO_PIN_SET);
-//			break;
-//	}
-//}
+//uint8_t matrix_buffer[8] = {0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08};
+//const int MAX_LED_MATRIX = 8;
+uint8_t matrix_buffer[8] = {0x00, 0xfc, 0xfe, 0x33, 0x33, 0xfe, 0xfc, 0x00};
+int scanner_COL[8] = {1, 2, 4, 8, 16, 32, 64, 128};
 
 void displayLEDMatrix(int num) {
  800014c:	b580      	push	{r7, lr}
@@ -354,6 +354,8 @@ void updateLEDMatrix(int index){
  800034a:	dbea      	blt.n	8000322 <updateLEDMatrix+0x116>
     	}
     }
+//    GPIOB->ODR &= 0x00FF;
+//    GPIOB->ODR |= (matrix_buffer[index] << 8);
 }
  800034c:	bf00      	nop
  800034e:	bf00      	nop

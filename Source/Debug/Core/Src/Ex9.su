@@ -1,4 +1,4 @@
-Ex9.c:50:6:displayLEDMatrix	16	static
-Ex9.c:83:6:updateLEDMatrix	24	static
-Ex9.c:137:6:ex9_init	8	static
-Ex9.c:142:6:ex9_run	8	static
+Ex9.c:17:6:displayLEDMatrix	16	static
+Ex9.c:50:6:updateLEDMatrix	24	static
+Ex9.c:106:6:ex9_init	8	static
+Ex9.c:111:6:ex9_run	8	static
