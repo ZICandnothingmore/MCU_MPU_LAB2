@@ -94,12 +94,13 @@ int main(void)
   HAL_GPIO_WritePin(GPIOB, a_Pin|b_Pin|c_Pin|d_Pin|e_Pin|f_Pin
                           |g_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(GPIOA, EN0_Pin|EN1_Pin|EN2_Pin|EN3_Pin, 1);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   ex9_init();
-  setTimer1(1000);
+  timer1_flag = 1;
   while (1)
   {
     /* USER CODE END WHILE */
