@@ -98,14 +98,15 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  setTimer1(100);
+  ex9_init();
+  setTimer1(1000);
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
 	if (timer1_flag == 1){
-		setTimer1(100);
+		setTimer1(1000);
 		//TODO
 		HAL_GPIO_TogglePin(RED_LED_GPIO_Port, RED_LED_Pin);
 		ex9_run();
