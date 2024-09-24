@@ -12,8 +12,6 @@
 
 extern const int MAX_LED_MATRIX;
 extern int index_led_matrix;
-extern uint8_t matrix_buffer[8];
-extern int scanner_COL[8];
 
 void ex9_init();
 void ex9_run();

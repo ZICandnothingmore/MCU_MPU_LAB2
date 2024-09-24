@@ -23,7 +23,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "software_timer.h"
-#include "Ex9.h"
+#include "Ex10.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -99,8 +99,8 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  ex9_init();
-  timer1_flag = 1;
+  ex10_init();
+  setTimer1(1000);
   while (1)
   {
     /* USER CODE END WHILE */
@@ -110,7 +110,7 @@ int main(void)
 		setTimer1(1000);
 		//TODO
 		HAL_GPIO_TogglePin(RED_LED_GPIO_Port, RED_LED_Pin);
-		ex9_run();
+		ex10_run();
 	}
   }
   /* USER CODE END 3 */
