@@ -1,0 +1,4 @@
+Ex9_10.c:21:6:displayLEDMatrix	16	static
+Ex9_10.c:55:6:updateLEDMatrix	24	static
+Ex9_10.c:118:6:ex10_init	4	static
+Ex9_10.c:122:6:ex10_run	8	static

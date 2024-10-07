@@ -13,8 +13,8 @@
 extern const int MAX_LED_MATRIX;
 extern int index_led_matrix;
 
-void ex9_init();
-void ex9_run();
+void ex10_init();
+void ex10_run();
 void displayLEDMatrix(int num);
 void updateLEDMatrix(int index);
 
