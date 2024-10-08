@@ -1,6 +1,0 @@
-Ex8.c:16:6:display7SEG	16	static
-Ex8.c:109:6:update7SEG	16	static
-Ex8.c:149:6:updateClockBuffer	4	static
-Ex8.c:156:6:clock_run	8	static
-Ex8.c:172:6:ex8_init	8	static
-Ex8.c:183:6:ex8_run	8	static
